@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "screenshots",
+  "info": {
+    "singularName": "screenshot",
+    "pluralName": "screenshots",
+    "displayName": "Screenshot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imageBlur": {
+      "type": "text"
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "thumbBlur": {
+      "type": "text"
+    },
+    "date": {
+      "type": "string",
+      "required": true
+    },
+    "height": {
+      "type": "integer",
+      "required": true
+    },
+    "width": {
+      "type": "integer",
+      "required": true
+    },
+    "game": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::game.game",
+      "inversedBy": "screenshots"
+    }
+  }
+}
