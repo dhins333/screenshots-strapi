@@ -422,7 +422,6 @@ export interface ApiScreenshotScreenshot extends Struct.CollectionTypeSchema {
     date: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.Text;
     game: Schema.Attribute.Relation<'manyToOne', 'api::game.game'>;
-    height: Schema.Attribute.Integer & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     imageBlur: Schema.Attribute.Text;
@@ -433,13 +432,13 @@ export interface ApiScreenshotScreenshot extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    spoiler: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     thumb: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     thumbBlur: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    width: Schema.Attribute.Integer & Schema.Attribute.Required;
   };
 }
 

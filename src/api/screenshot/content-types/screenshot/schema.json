@@ -46,19 +46,15 @@
       "type": "string",
       "required": true
     },
-    "height": {
-      "type": "integer",
-      "required": true
-    },
-    "width": {
-      "type": "integer",
-      "required": true
-    },
     "game": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::game.game",
       "inversedBy": "screenshots"
+    },
+    "spoiler": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
