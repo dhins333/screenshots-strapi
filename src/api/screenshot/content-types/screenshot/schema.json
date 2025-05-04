@@ -44,7 +44,7 @@
     },
     "date": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "game": {
       "type": "relation",

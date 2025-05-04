@@ -419,7 +419,7 @@ export interface ApiScreenshotScreenshot extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    date: Schema.Attribute.String & Schema.Attribute.Required;
+    date: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     game: Schema.Attribute.Relation<'manyToOne', 'api::game.game'>;
     image: Schema.Attribute.Media<'images' | 'files'> &
