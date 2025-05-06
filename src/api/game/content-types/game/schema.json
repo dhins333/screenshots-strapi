@@ -33,6 +33,24 @@
       "relation": "oneToMany",
       "target": "api::screenshot.screenshot",
       "mappedBy": "game"
+    },
+    "dominantColor": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "background": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -381,15 +381,18 @@ export interface ApiGameGame extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    background: Schema.Attribute.Media<'images' | 'files'>;
     cover: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     coverBlur: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    dominantColor: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::game.game'> &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
